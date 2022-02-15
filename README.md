@@ -46,3 +46,5 @@
 - 주문 엔티티 : class Order
 - 주문 서비스 인터페이스 : interface OrderService
 - 주문 서비스 구현체 : class OrderServiceImpl implements OrderService
+### 새로운 할인 정책 개발
+- 정률 할인 정책 구현체 : class RateDiscountPolicy implements DiscountPolicy
