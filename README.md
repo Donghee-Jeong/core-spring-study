@@ -48,3 +48,8 @@
 - 주문 서비스 구현체 : class OrderServiceImpl implements OrderService
 ### 새로운 할인 정책 개발
 - 정률 할인 정책 구현체 : class RateDiscountPolicy implements DiscountPolicy
+
+## 관심사의 분리
+- AppConfig 설정 클래스를 통해 객체의 생성과 연결을 하게 된다.(구성 영역)(DI컨테이너)
+- 사용 영역은 할인 정책 등을 변경해도 코드의 변경이 필요없다.
+- SRP, DIP, OCP를 준수하게 된다.
