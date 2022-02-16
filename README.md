@@ -53,3 +53,15 @@
 - AppConfig 설정 클래스를 통해 객체의 생성과 연결을 하게 된다.(구성 영역)(DI컨테이너)
 - 사용 영역은 할인 정책 등을 변경해도 코드의 변경이 필요없다.
 - SRP, DIP, OCP를 준수하게 된다.
+
+## 스프링으로 전환하기
+### AppConfig 스프링 기반으로 변경
+- AppConfig에 설정을 구성한다는 뜻의 @Configuration을 붙여준다.
+- 각 메서드에 @Bean을 붙여줌으로서 스프링 컨테이너에 스프링 빈으로 등록한다.
+
+### MemberApp에 스프링 컨테이너 적용
+- ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+- MemberService memberService = applicationContext.getBean("memberService",MemberService.class);
+
+### OrderApp에 스프링 컨테이너 적용
+- OrderService orderService = applicationContext.getBean("orderService",OrderService.class);
