@@ -18,7 +18,7 @@ public class BeanLifeCycleTest {
 
     @Configuration
     static class LifeCycleConfig{
-        @Bean
+        @Bean(initMethod = "init") // destroyMethod는 기본으로 close, shutdown 등이 기본값으로 추론된다.
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
             networkClient.setUrl("http://hello-spring.dev");
